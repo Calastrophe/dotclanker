@@ -1,6 +1,6 @@
 # org-non-leaf
 
-> Keep non-leaf modules focused on declarations and re-exports.
+> Keep non-leaf modules that have no main type of their own focused on declarations and re-exports.
 
 ## Why it matters
 
@@ -8,7 +8,7 @@ Separating module structure from implementation helps readers find each abstract
 
 ## Guidance
 
-Use a non-leaf module to declare child modules and re-export their public items. A small amount of glue connecting child modules is reasonable. Keep substantial implementations in leaf modules. The project's layout may treat test and language-interop modules as special leaf modules.
+Use a non-leaf module with no main type of its own to declare child modules and re-export their public items. A module that has a main type defines it in the module file; see [org-module-directory](org-module-directory.md). A small amount of glue connecting child modules is reasonable. Keep other substantial implementations in leaf modules. The project's layout may treat test and language-interop modules as special leaf modules.
 
 ## Bad
 
@@ -17,7 +17,7 @@ mod parser {
     pub mod token;
 
     pub fn parse(input: &str) {
-        // A large parser implementation lives alongside module wiring.
+        // A large implementation that is not the module's main type lives alongside module wiring.
     }
 }
 ```

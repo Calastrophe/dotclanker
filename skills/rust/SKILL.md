@@ -18,7 +18,8 @@ Rule prefixes identify the categories below. For public library signatures, read
 ## Modules and imports
 
 - [org-leaf-module](rules/org-leaf-module.md) - Name a leaf module after its main user-defined type when it has one.
-- [org-non-leaf](rules/org-non-leaf.md) - Keep non-leaf modules focused on declarations and re-exports, with a small amount of glue code when useful.
+- [org-non-leaf](rules/org-non-leaf.md) - Keep non-leaf modules with no main type of their own focused on declarations and re-exports, with a small amount of glue code when useful.
+- [org-module-directory](rules/org-module-directory.md) - Group sibling files that share one concept under a module directory without the prefix, and keep the module's main type in the module file.
 - [org-glob-imports](rules/org-glob-imports.md) - Prefer explicit imports; use glob imports only when their scope and origin remain clear.
 - [org-imports-per-module](rules/org-imports-per-module.md) - Keep imports from different modules in separate use statements.
 - [org-local-trait-import](rules/org-local-trait-import.md) - Import a trait inside a function when its use is local.
